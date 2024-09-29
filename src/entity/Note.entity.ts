@@ -24,7 +24,7 @@ export class Note {
   @Column({ type: "varchar", nullable: false })
   description: string;
 
-  @Column({ type: "simple-array", nullable: true })
+  @Column("text", { array: true, nullable: true })
   tags: string[];
 
   @Column({ name: "limit_date", type: "timestamp", nullable: false })

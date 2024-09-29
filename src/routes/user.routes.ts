@@ -11,12 +11,14 @@ Router.get(
   authorization(["admin"]),
   UserController.getUsers
 );
+
 Router.get(
   "/profile",
   authentification,
   authorization(["user", "admin"]),
   AuthController.getProfile
 );
+
 Router.post("/signup", UserController.signup);
 Router.post("/login", AuthController.login);
 Router.put(
@@ -25,6 +27,7 @@ Router.put(
   authorization(["user", "admin"]),
   UserController.updateUser
 );
+
 Router.delete(
   "/delete/:id",
   authentification,
